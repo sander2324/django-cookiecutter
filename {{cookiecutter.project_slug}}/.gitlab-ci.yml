@@ -6,13 +6,21 @@ variables:
 stages:
   - test
 
-lint:
+lint-backend:
   stage: test
 
   before_script:
     - pip install black==20.8b1 flake8==3.9.0 isort==5.8.0
   script:
     - make lint
+
+lint-frontend:
+  stage: test
+
+  before_script:
+    - yarn install
+  script:
+    - yarn lint
 
 pytest:
   stage: test
