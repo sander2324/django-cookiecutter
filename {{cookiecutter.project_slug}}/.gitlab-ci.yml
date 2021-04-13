@@ -1,0 +1,32 @@
+image: python:3.9
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+stages:
+  - test
+
+lint:
+  stage: test
+
+  before_script:
+    - pip install black==20.8b1 flake8==3.9.0 isort==5.8.0
+  script:
+    - make lint
+
+pytest:
+  stage: test
+
+  services:
+    - postgres:12
+
+  variables:
+    SECRET_KEY: supersecretgitlabcikey
+    POSTGRES_DB: {{cookiecutter.project_slug}}
+    POSTGRES_PASSWORD: supersecretdatabasekey
+    DATABASE_URL: postgres://postgres:supersecretdatabasekey@postgres/{{cookiecutter.project_slug}}
+
+  before_script:
+    - pip3 install -r requirements.txt
+  script:
+    - make test

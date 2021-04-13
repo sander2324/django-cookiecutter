@@ -1,0 +1,6 @@
+{
+    "project_title": "My project",
+    "project_slug": "my_project",
+    "include_drf": "n",
+    "include_wagtail": "n"
+}
