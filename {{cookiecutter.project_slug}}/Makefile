@@ -25,6 +25,9 @@ format:
 	black src
 	isort src
 
+test:
+	pytest
+
 makemessages:
 	cd src/{{cookiecutter.project_slug}} && manage.py makemessages --no-location --all
 
