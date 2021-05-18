@@ -23,6 +23,8 @@ ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
 AUTH_USER_MODEL = "user.User"
 
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
 
 # Application definition
 

@@ -1,9 +1,9 @@
-django==3.1.8
+django==3.2.3
 django-cors-headers==3.7.0
 django-environ==0.4.5
-httpx==0.17.1
+httpx==0.18.1
 django-filter==2.4.0
 whitenoise==5.2.0{% if cookiecutter.include_drf %}
 djangorestframework==3.12.4
 Markdown==3.3.4{% endif %}
-{% if cookiecutter.include_wagtail == "y" %}wagtail==2.12.3{% endif %}
+{% if cookiecutter.include_wagtail == "y" %}wagtail==2.13.0{% endif %}
