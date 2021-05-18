@@ -5,7 +5,7 @@
 
 ## Features
 
-- Django 3.1
+- Django 3.2
 - Pytest
 - Python linting with black and isort
 - Frontend linting with eslint
